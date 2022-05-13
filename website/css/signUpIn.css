@@ -1,0 +1,172 @@
+html,
+body {
+    height: 100%;
+}
+
+.signUpAndInContainer{
+    background: url("../assets/images/food1.jpg") no-repeat fixed;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signUpContainer {
+    background: rgba(255,255,255,0.96);
+    min-height: 400px;
+    max-height: 100vh;
+    width: 432px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.signInContainer {
+    background: rgba(255,255,255,0.96);
+    min-height: 350px;
+    max-height: 100vh;
+    width: 350px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 10px 16px;
+}
+
+.header > h1 {
+    font-size: 32px;
+}
+
+.header > h2 {
+    font-size: 15px;
+}
+
+form {
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid rgb(218, 221, 225);
+    padding: 16px;
+    position: relative;
+}
+
+form .userDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+form .userDetails input {
+    font-size: inherit;
+    color: rgb(28, 30, 33);
+    background-color: rgb(245, 246, 247) ;
+    padding: 11px;
+    border: 1px solid rgb(204, 208, 213);
+    border-radius: 5px;
+}
+
+form .userDetails > input {
+    margin-bottom: 10px;
+}
+
+form .userDetails .form-input-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+form .userDetails .form-input-group:nth-child(4) {
+    margin: 10px 0;
+}
+
+form .userDetails .form-input-group:nth-child(5) {
+    font-size: 12px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+form .userDetails .form-input-group .genders {
+    display: flex;
+}
+
+form .userDetails .form-input-group .genders > div {
+    height: 36px;
+    font-size: inherit;
+    text-align: left;
+    border: 1px solid rgb(204, 208, 213);
+    border-radius: 5px;
+    margin: 8px 6px;
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+}
+
+form .userDetails .form-input-group .genders > div > label {
+    line-height: 36px;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 28px;
+}
+
+form .userDetails .form-input-group .genders > div > input {
+    height: inherit;
+    position: absolute;
+    right: 10px;
+}
+
+.registerButton {
+    display: flex;
+    justify-content: center;
+}
+
+.registerButton button,
+form .registerButton input {
+    height: 36px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 164, 0);
+    padding: 0 32px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+form .logInButton {
+    display: flex;
+}
+
+form .logInButton > input {
+    height: 36px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(66, 103, 178);
+    padding: 0 32px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    flex-grow: 1;
+}
+
+.linkToLogIn {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0 10px;
+}
+
+a {
+    font-size: 12px;
+    color: rgb(24, 119, 242);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.divide {
+    border-top: 1px solid rgb(204, 208, 213);
+    margin: 0 10px 10px;
+}
