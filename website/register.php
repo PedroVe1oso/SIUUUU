@@ -1,18 +1,23 @@
 <?php
 
-    require_once("includes/config.php");
-    require_once("includes/classes/FormSanitizer.php");
+require_once("database/config.php");
+require_once("includes/classes/FormSanitizer.php");
+require_once("database/classes/Account.php");
+
+
+$account = new Account($con);
 
     if(isset($_POST["submitButton"]))
-    {
-        $firstName = FormSanitizer::sanitizeFormString($_POST["firstName"]);
-        $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
-        $email = FormSanitizer::sanitizeFormCredential($_POST["email"]);
-        $phoneNumber = FormSanitizer::sanitizeFormCredential($_POST["phoneNumber"]);
-        $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
-        $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
-    }
-
+        {
+            $firstName = FormSanitizer::sanitizeFormString($_POST["firstName"]);
+            $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
+            $email = FormSanitizer::sanitizeFormCredential($_POST["email"]);
+            $phoneNumber = FormSanitizer::sanitizeFormCredential($_POST["phoneNumber"]);
+            $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
+            $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
+            
+            $account->validateFirstName($firstName);
+        }
 ?>
 
 
@@ -38,6 +43,7 @@
                 <form method="POST">
                     <div class="userDetails">
                         <div class="form-input-group">
+                            <?php echo $account->getError("First name has wrong length");?>
                             <input type="text" name="firstName" placeholder="First name" required>
                             <input type="text" name="lastName" placeholder="Last name" required>
                         </div>
