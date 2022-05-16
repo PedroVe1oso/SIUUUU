@@ -11,7 +11,7 @@ class Account
         $this->con  = $con;
     }
 
-    public function register(string $firstName, string $lastName, string $phoneNumber, string $email, string $password, string $password2, string $birthday, string $gender): bool
+    public function signUp(string $firstName, string $lastName, string $phoneNumber, string $email, string $password, string $password2, string $birthday, string $gender): bool
     {
         $this->validateName($firstName);
         $this->validateName($lastName);

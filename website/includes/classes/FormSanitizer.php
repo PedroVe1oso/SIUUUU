@@ -11,7 +11,7 @@ class FormSanitizer
         return $input;
     }
 
-    public static function sanitizeFormCredential($input): string
+    public static function sanitizeFormUsername($input): string
     {
         $input = strip_tags($input);
         $input = str_replace(" ", "", $input);

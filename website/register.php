@@ -13,15 +13,15 @@ $account = new Account($con);
         {
             $firstName = FormSanitizer::sanitizeFormString($_POST["firstName"]);
             $lastName = FormSanitizer::sanitizeFormString($_POST["lastName"]);
-            $email = FormSanitizer::sanitizeFormCredential($_POST["email"]);
-            $phoneNumber = FormSanitizer::sanitizeFormCredential($_POST["phoneNumber"]);
+            $email = FormSanitizer::sanitizeFormUsername($_POST["email"]);
+            $phoneNumber = FormSanitizer::sanitizeFormUsername($_POST["phoneNumber"]);
             $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
             $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
             $birthday = $_POST["birthday"];
             $gender = $_POST["gender"];
             
             
-            $result = $account->register($firstName, $lastName, $phoneNumber, $email, $password, $password2, $birthday, $gender);
+            $result = $account->signUp($firstName, $lastName, $phoneNumber, $email, $password, $password2, $birthday, $gender);
         
             if($result)
             {
