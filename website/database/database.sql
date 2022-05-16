@@ -1,5 +1,5 @@
 
-DROP TABLE IF EXISTS Account;
+DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Restaurant;
 DROP TABLE IF EXISTS Phone;
 DROP TABLE IF EXISTS Dish;
@@ -8,18 +8,18 @@ DROP TABLE IF EXISTS Category;
 /*******************************************************************************
    Create Tables
 ********************************************************************************/
-CREATE TABLE Account
+CREATE TABLE Users
 (
     id INTEGER NOT NULL,
     firstName NVARCHAR(25) NOT NULL,
-    lastName NVARCHER(25) NOT NULL,
+    lastName NVARCHAR(25) NOT NULL,
     phoneNumber NVARCHAR(9) NOT NULL UNIQUE,
     email NVARCHAR(100) NOT NULL UNIQUE,
     password NVARCHAR(255) NOT NULL,
-    birthDate DATE NOT NULL,
-    isOwner BIT DEFAULT 0 NOT NULL,
-    isAdmin BIT DEFAULT 0 NOT NULL,
-    signUpDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    birthDate INTEGER NOT NULL,
+    isOwner INTEGER DEFAULT 0 NOT NULL,
+    isAdmin INTEGER DEFAULT 0 NOT NULL,
+    signUpDate INTEGER DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT PK_Account PRIMARY KEY  (id)
 );
 
@@ -29,9 +29,9 @@ CREATE TABLE Restaurant
     name NVARCHAR(50)  NOT NULL,
     address NVARCHAR(250) NOT NULL,
     ownerId INTEGER NOT NULL,
-    signUpDate DATETIME DEFAULT CURRENT_TIMESTAMP,
+    signUpDate INTEGER DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT PK_Restaurant PRIMARY KEY  (id),
-    FOREIGN KEY (ownerId) REFERENCES Account (id)
+    FOREIGN KEY (ownerId) REFERENCES Users (id)
         ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
@@ -48,7 +48,7 @@ CREATE TABLE Dish
 (
     id INTEGER NOT NULL,
     name NVARCHAR(50)  NOT NULL,
-    price DECIMAL(6,2) NOT NULL,
+    price NUMERIC(6,2) NOT NULL,
     description NVARCHAR(200) NOT NULL,
     restaurantId INTEGER NOT NULL,
     categoryId INTEGER NOT NULL,
@@ -77,9 +77,9 @@ CREATE INDEX IFK_Category ON Category (id);
    Populate Tables
 ********************************************************************************/
 
-INSERT INTO Account (firstName, lastName, phoneNumber, email, password, birthDate) VALUES ('Pedro', 'Veloso', '917879879', '1@gmail.com', 'admin', '2004-10-20');
-INSERT INTO Account (firstName, lastName, phoneNumber, email, password, birthDate) VALUES ('Jorge', 'Jesus', '968767564', '2@gmail.com', 'admin', '2003-1-13');
-INSERT INTO Account (firstName, lastName, phoneNumber, email, password, birthDate) VALUES ('Bruno', 'Carvalho', '938762512', '3@gmail.com', 'admin', '2001-5-4');
+INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate) VALUES ('Pedro', 'Veloso', '917879879', '1@gmail.com', 'admin', '2004-10-20');
+INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate) VALUES ('Jorge', 'Jesus', '968767564', '2@gmail.com', 'admin', '2003-1-13');
+INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate) VALUES ('Bruno', 'Carvalho', '938762512', '3@gmail.com', 'admin', '2001-5-4');
 
 INSERT INTO Restaurant (name, address, ownerId) VALUES ('Ola', 'Praça da Liberdade 126, 4000-322 Porto', '1');
 INSERT INTO Restaurant (name, address, ownerId) VALUES ('Adeus', 'Estr. Exterior da Circunvalação 8114-8116, 4200-163 Porto', '2');

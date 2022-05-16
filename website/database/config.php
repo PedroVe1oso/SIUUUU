@@ -1,4 +1,6 @@
 <?php
+    declare(strict_types = 1);
+
     ob_start(); // turn on output buffering
     session_start();
 
@@ -6,7 +8,7 @@
 
     try
     {
-        $con = new PDO('sqlite:database.db');
+        $con = new PDO('sqlite:database/database.db');
         $con -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         $con -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
@@ -14,3 +16,4 @@
     {
         exit("Connection to database failed: " . $exception -> getMessage());
     }
+

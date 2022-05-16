@@ -3,6 +3,8 @@
 require_once("database/config.php");
 require_once("includes/classes/FormSanitizer.php");
 require_once("database/classes/Account.php");
+require_once("database/classes/Constants.php");
+
 
 
 $account = new Account($con);
@@ -16,7 +18,8 @@ $account = new Account($con);
             $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
             $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
             
-            $account->validateFirstName($firstName);
+            
+            $account->register($firstName, $lastName, $email, $phoneNumber, $password, $password2);
         }
 ?>
 
@@ -43,15 +46,23 @@ $account = new Account($con);
                 <form method="POST">
                     <div class="userDetails">
                         <div class="form-input-group">
-                            <?php echo $account->getError("First name has wrong length");?>
+                            <?php echo $account->getError(Constants::$nameLengthErrorMessage);?>
                             <input type="text" name="firstName" placeholder="First name" required>
+
+                            <?php echo $account->getError(Constants::$nameLengthErrorMessage);?>
                             <input type="text" name="lastName" placeholder="Last name" required>
                         </div>
                         <div class="form-input-group">
+                            <?php echo $account->getError(Constants::$emailInvalidErrorMessage);?>
+                            <?php echo $account->getError(Constants::$emailTakenErrorMessage);?>
                             <input type="email" name="email" placeholder="Email" required>
+
+                            <?php echo $account->getError(Constants::$phoneNumberInvalidErrorMessage);?>
+                            <?php echo $account->getError(Constants::$phoneNumberTakenErrorMessage);?>
                             <input type="tel" name="phoneNumber" placeholder="Phone number" pattern="[0-9]{9}" required>
                         </div>
                         <div class="form-input-group">
+                            <?php echo $account->getError(Constants::$passwordsMissMatchErrorMessage);?>
                             <input type="password" name="password" placeholder="Password" required>
                             <input type="password" name="password2" placeholder="Confirm password" required>
                         </div>
