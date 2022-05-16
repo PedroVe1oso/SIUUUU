@@ -17,6 +17,7 @@ CREATE TABLE Users
     email NVARCHAR(100) NOT NULL UNIQUE,
     password NVARCHAR(255) NOT NULL,
     birthDate INTEGER NOT NULL,
+    gender NVARCHAR(6) NOT NULL,
     isOwner INTEGER DEFAULT 0 NOT NULL,
     isAdmin INTEGER DEFAULT 0 NOT NULL,
     signUpDate INTEGER DEFAULT CURRENT_TIMESTAMP,
@@ -77,9 +78,9 @@ CREATE INDEX IFK_Category ON Category (id);
    Populate Tables
 ********************************************************************************/
 
-INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate) VALUES ('Pedro', 'Veloso', '917879879', '1@gmail.com', 'admin', '2004-10-20');
-INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate) VALUES ('Jorge', 'Jesus', '968767564', '2@gmail.com', 'admin', '2003-1-13');
-INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate) VALUES ('Bruno', 'Carvalho', '938762512', '3@gmail.com', 'admin', '2001-5-4');
+INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate, gender) VALUES ('Pedro', 'Veloso', '917879879', '1@gmail.com', 'admin', '2004-10-20', 'Male');
+INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate, gender) VALUES ('Jorge', 'Jesus', '968767564', '2@gmail.com', 'admin', '2003-1-13', 'Idk');
+INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate, gender) VALUES ('Bruna', 'Carvalho', '938762512', '3@gmail.com', 'admin', '2001-5-4', 'Female');
 
 INSERT INTO Restaurant (name, address, ownerId) VALUES ('Ola', 'Praça da Liberdade 126, 4000-322 Porto', '1');
 INSERT INTO Restaurant (name, address, ownerId) VALUES ('Adeus', 'Estr. Exterior da Circunvalação 8114-8116, 4200-163 Porto', '2');

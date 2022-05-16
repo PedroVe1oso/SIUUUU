@@ -11,17 +11,30 @@ class Account
         $this->con  = $con;
     }
 
-    public function register(string $firstName, string $lastName, string $email, string $phoneNumber, string $password, string $password2)//, $birthday, $gender)
+    public function register(string $firstName, string $lastName, string $phoneNumber, string $email, string $password, string $password2, string $birthday, string $gender): bool
     {
         $this->validateName($firstName);
         $this->validateName($lastName);
         $this->validateEmail($email);
-        $this->validateName($phoneNumber);
+        $this->validatePhoneNumber($phoneNumber);
         $this->validatePasswords($password, $password2);
-//        $this->validateName($birthday);
-//        $this->validateName($gender);
+
+        if (empty($this->errorArray))
+        {
+            return $this->insertUserDetails($firstName, $lastName, $phoneNumber, $email, $password, $birthday, $gender);
+        }
+
+        return false;
     }
 
+    private function insertUserDetails(string $firstName, string $lastName, string $phoneNumber, string $email, string $password, string $birthday, string $gender): bool
+    {
+        $password = hash("sha512", $password);
+
+        $stmt = $this->con->prepare('INSERT INTO Users(firstName, lastName, phoneNumber, email, password, birthdate, gender)
+                                                    VALUES (:firstName, :lastName, :phoneNumber, :email, :password, :birthday, :gender)');
+        return $stmt->execute([$firstName, $lastName, $phoneNumber, $email, $password, $birthday, $gender]);
+    }
 
     private function validateName(string $name) {
         if(strlen($name) < 2 || strlen($name) > 25)

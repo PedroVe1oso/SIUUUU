@@ -17,9 +17,16 @@ $account = new Account($con);
             $phoneNumber = FormSanitizer::sanitizeFormCredential($_POST["phoneNumber"]);
             $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
             $password2 = FormSanitizer::sanitizeFormPassword($_POST["password2"]);
+            $birthday = $_POST["birthday"];
+            $gender = $_POST["gender"];
             
             
-            $account->register($firstName, $lastName, $email, $phoneNumber, $password, $password2);
+            $result = $account->register($firstName, $lastName, $phoneNumber, $email, $password, $password2, $birthday, $gender);
+        
+            if($result)
+            {
+                header('Location: index.php');
+            }
         }
 ?>
 

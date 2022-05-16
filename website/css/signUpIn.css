@@ -73,6 +73,7 @@ form .userDetails > input {
 
 form .userDetails .form-input-group {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 10px;
 }
@@ -82,7 +83,7 @@ form .userDetails .form-input-group:nth-child(4) {
 }
 
 form .userDetails .form-input-group:nth-child(5) {
-    font-size: 12px;
+    font-size: 15px;
     margin: 10px 0;
     display: flex;
     flex-direction: column;
