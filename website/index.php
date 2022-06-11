@@ -1,10 +1,17 @@
 <?php
 require_once("database/config.php");
+require_once("includes/classes/PreviewProvider.php");
 
-if(!isset($_SESSION['username']))
+if(!isset($_SESSION['userLoggedIn']))
 {
     header('Location: login.php');
 }
+
+$userLoggedIn = $_SESSION["userLoggedIn"];
+
+$preview = new PreviewProvider($con, $userLoggedIn);
+
+echo $preview->createPreview(null);
 ?>
 <!DOCTYPE html>
 <html lang="en-US">

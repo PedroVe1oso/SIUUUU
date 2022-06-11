@@ -16,7 +16,7 @@ if(isset($_POST["submitButton"]))
 
     if($result)
     {
-        $_SESSION['username'] = $email;
+        $_SESSION['userLoggedIn'] = $email;
         header('Location: index.php');
     }
 }
