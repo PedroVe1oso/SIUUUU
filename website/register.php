@@ -25,9 +25,19 @@ $account = new Account($con);
         
             if($result)
             {
-                header('Location: index.php');
+                header('Location: login.php');
             }
         }
+
+    function getPreviousInputs($inputName)
+    {
+        if(isset($_POST[$inputName]))
+        {
+            echo $_POST[$inputName];
+        }
+    }
+
+
 ?>
 
 
@@ -54,7 +64,7 @@ $account = new Account($con);
                     <div class="userDetails">
                         <div class="form-input-group">
                             <?php echo $account->getError(Constants::$nameLengthErrorMessage);?>
-                            <input type="text" name="firstName" placeholder="First name" required>
+                            <input type="text" name="firstName" placeholder="First name" value="<?php getPreviousInputs("firstName");?>" required>
 
                             <?php echo $account->getError(Constants::$nameLengthErrorMessage);?>
                             <input type="text" name="lastName" placeholder="Last name" required>

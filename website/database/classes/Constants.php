@@ -8,4 +8,5 @@ class Constants
     public static string $phoneNumberInvalidErrorMessage = "Invalid phone number";
     public static string $phoneNumberTakenErrorMessage = "Phone number already in use";
     public static string $passwordsMissMatchErrorMessage = "Passwords dont match";
+    public static string $loginFailedErrorMessage = "Login failed, wrong credentials";
 }

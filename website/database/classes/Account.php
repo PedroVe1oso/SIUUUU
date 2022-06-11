@@ -27,6 +27,23 @@ class Account
         return false;
     }
 
+    public function signIn(string $email, string $password)
+    {
+        $password = hash("sha512", $password);
+
+        $stmt = $this->con->prepare('SELECT COUNT(*) FROM Users WHERE email= :email AND password= :password');
+        $stmt->execute([$email, $password]);
+
+        if($stmt->fetchColumn() == 1)
+        {
+            return true;
+        }
+
+        array_push($this->errorArray, Constants::$loginFailedErrorMessage);
+        return false;
+
+    }
+
     private function insertUserDetails(string $firstName, string $lastName, string $phoneNumber, string $email, string $password, string $birthday, string $gender): bool
     {
         $password = hash("sha512", $password);
@@ -50,7 +67,7 @@ class Account
             return;
         }
 
-        $stmt = $this->con->prepare('SELECT COUNT(*) FROM Users WHERE email=:email');
+        $stmt = $this->con->prepare('SELECT COUNT(*) FROM Users WHERE email= :email');
         $stmt->execute([$email]);
 
         if($stmt->fetchColumn())
@@ -66,7 +83,7 @@ class Account
             return;
         }
 
-        $stmt = $this->con->prepare('SELECT COUNT(*) FROM Users WHERE phoneNumber=:phoneNumber');
+        $stmt = $this->con->prepare('SELECT COUNT(*) FROM Users WHERE phoneNumber= :phoneNumber');
         $stmt->execute([$phoneNumber]);
 
         if($stmt->fetchColumn())

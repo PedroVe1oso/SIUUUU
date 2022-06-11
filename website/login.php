@@ -1,3 +1,27 @@
+<?php
+
+require_once("database/config.php");
+require_once("includes/classes/FormSanitizer.php");
+require_once("database/classes/Account.php");
+require_once("database/classes/Constants.php");
+
+$account = new Account($con);
+
+if(isset($_POST["submitButton"]))
+{
+    $email = FormSanitizer::sanitizeFormUsername($_POST["email"]);
+    $password = FormSanitizer::sanitizeFormPassword($_POST["password"]);
+     
+    $result = $account->signIn($email, $password);
+
+    if($result)
+    {
+        $_SESSION['username'] = $email;
+        header('Location: index.php');
+    }
+}
+?>
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -17,7 +41,8 @@
                 </div>
                 <form method="POST">
                     <div class="userDetails">
-                        <input type="text" name="userLogin" placeholder="Email or phone number" required>
+                        <?php echo $account->getError(Constants::$loginFailedErrorMessage);?>
+                        <input type="text" name="email" placeholder="Email" required>
                         <input type="password" name="password" placeholder="Password" required>
                     </div>
                     <div class="logInButton">
