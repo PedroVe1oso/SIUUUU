@@ -19,10 +19,13 @@ class PreviewProvider
         $id = $entity->getId();
         $name = $entity->getName();
         $price = $entity->getPrice();
+        $thumbnail = $entity->getThumbnail();
 
-        echo $id;
-        echo $name;
-        echo $price;
+        return "<div class='previewContainer'>
+
+                    <img src='$thumbnail' class='previewImage'>
+                    
+                </div>";
     }
 
     private function getRandomDish(): Entity
@@ -35,3 +38,4 @@ class PreviewProvider
         return new Entity($this->con, $row);
     }
 }
+?>

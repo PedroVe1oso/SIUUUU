@@ -1,14 +1,6 @@
 <?php
-require_once ("database/config.php");
-require_once ("includes/classes/PreviewProvider.php");
-require_once ("includes/classes/Entity.php");
+require_once(__DIR__ . '/includes/header.php');
 
-if(!isset($_SESSION['userLoggedIn']))
-{
-    header('Location: login.php');
-}
-
-$userLoggedIn = $_SESSION["userLoggedIn"];
 
 $preview = new PreviewProvider($con, $userLoggedIn);
 

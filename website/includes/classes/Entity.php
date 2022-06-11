@@ -31,4 +31,8 @@ class Entity
     public function getPrice() {
         return $this->sqlData["price"];
     }
+
+    public function getThumbnail() {
+        return $this->sqlData["thumbnail"];
+    }
 }

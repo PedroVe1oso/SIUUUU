@@ -16,4 +16,4 @@
     {
         exit("Connection to database failed: " . $exception -> getMessage());
     }
-
+?>

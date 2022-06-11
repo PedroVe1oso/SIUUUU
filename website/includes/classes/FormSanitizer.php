@@ -24,3 +24,4 @@ class FormSanitizer
         return $input;
     }
 }
+?>
