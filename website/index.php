@@ -1,6 +1,7 @@
 <?php
-require_once("database/config.php");
-require_once("includes/classes/PreviewProvider.php");
+require_once ("database/config.php");
+require_once ("includes/classes/PreviewProvider.php");
+require_once ("includes/classes/Entity.php");
 
 if(!isset($_SESSION['userLoggedIn']))
 {

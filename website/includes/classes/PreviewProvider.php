@@ -15,13 +15,23 @@ class PreviewProvider
         if ($entity == null) {
             $entity = $this->getRandomDish();
         }
+
+        $id = $entity->getId();
+        $name = $entity->getName();
+        $price = $entity->getPrice();
+
+        echo $id;
+        echo $name;
+        echo $price;
     }
 
-    private function getRandomDish() {
+    private function getRandomDish(): Entity
+    {
         $stmt = $this->con->prepare("SELECT * FROM Dish ORDER BY RANDOM() LIMIT 1");
         $stmt->execute();
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        echo $row["name"];
+
+        return new Entity($this->con, $row);
     }
 }
