@@ -28,12 +28,8 @@ class PreviewProvider
 
     private function getRandomDish(): Entity
     {
-        $stmt = $this->con->prepare("SELECT * FROM Dish ORDER BY RANDOM() LIMIT 1");
-        $stmt->execute();
-
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        return new Entity($this->con, $row);
+        $entity = EntityProvider::getEntities($this->con, null, 1);
+        return $entity[0];
     }
 }
 ?>

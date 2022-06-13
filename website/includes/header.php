@@ -3,6 +3,7 @@ require_once(__DIR__ . '/../database/config.php');
 require_once(__DIR__ . '/classes/PreviewProvider.php');
 require_once(__DIR__ . '/classes/CategoryContainers.php');
 require_once(__DIR__ . '/classes/Entity.php');
+require_once(__DIR__ . '/classes/EntityProvider.php');
 
 if(!isset($_SESSION['userLoggedIn']))
 {
