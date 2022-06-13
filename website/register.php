@@ -1,11 +1,9 @@
 <?php
 
-require_once("database/config.php");
-require_once("includes/classes/FormSanitizer.php");
-require_once("database/classes/Account.php");
-require_once("database/classes/Constants.php");
-
-
+require_once(__DIR__ . '/database/config.php');
+require_once(__DIR__ . '/includes/classes/FormSanitizer.php');
+require_once(__DIR__ . '/database/classes/Account.php');
+require_once(__DIR__ . '/database/classes/Constants.php');
 
 $account = new Account($con);
 

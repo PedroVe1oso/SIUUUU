@@ -1,10 +1,10 @@
 <?php
-require_once("database/config.php");
+require_once(__DIR__ . '/includes/header.php');
 
-if(!isset($_SESSION['username']))
-{
-    header('Location: login.php');
-}
+
+$preview = new PreviewProvider($con, $userLoggedIn);
+
+echo $preview->createPreview(null);
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
