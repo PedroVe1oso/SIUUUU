@@ -95,6 +95,6 @@ INSERT INTO Phone (phoneNumber, restaurantId) VALUES ('250873248', '3');
 INSERT INTO Category (name) VALUES ('Carnes');
 INSERT INTO Category (name) VALUES ('Peixe');
 
-INSERT INTO Dish (name, price, description, thumbnail, restaurantid, categoryid) VALUES ('Lasanha', 12.60, 'DELICIA', 'dishes/thumbnails/1.jpg', '1', '1');
-INSERT INTO Dish (name, price, description, thumbnail, restaurantid, categoryid) VALUES ('Arroz de Pata', 21.50, 'dishes/thumbnails/2.jpg', 'kidijfunr,uiaejf,naer,frnio+mksdfmf sfkjsdn fjksdm fsjdkç', '1', '1');
-INSERT INTO Dish (name, price, description, thumbnail, restaurantid, categoryid) VALUES ('Bacalhoa com Natas', 17.50, 'dishes/thumbnails/3.jpg', 'kidijfunr,uiaejf,naer,frnio+mksdfmf sfkjsdn fjksdm fsjdkç', '3', '2');
+INSERT INTO Dish (name, price, description, thumbnail, restaurantid, categoryid) VALUES ('Lasanha', 12.60, 'DELICIA', '/website/assets/images/dishes/thumbnails/1.jpg', '1', '1');
+INSERT INTO Dish (name, price, description, thumbnail, restaurantid, categoryid) VALUES ('Arroz de Pata', 21.50, 'kidijfunr,uiaejf,naer,frnio+mksdfmf sfkjsdn fjksdm fsjdkç', '/website/assets/images/dishes/thumbnails/2.jpg', '1', '1');
+INSERT INTO Dish (name, price, description, thumbnail, restaurantid, categoryid) VALUES ('Bacalhoa com Natas', 17.50, 'kidijfunr,uiaejf,naer,frnio+mksdfmf sfkjsdn fjksdm fsjdkç', '/website/assets/images/dishes/thumbnails/3.jpg', '3', '2');

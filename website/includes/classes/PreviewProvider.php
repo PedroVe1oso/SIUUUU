@@ -22,9 +22,7 @@ class PreviewProvider
         $thumbnail = $entity->getThumbnail();
 
         return "<div class='previewContainer'>
-
-                    <img src='$thumbnail' class='previewImage'>
-                    
+                        <img src='$thumbnail' class='previewImage'>
                 </div>";
     }
 
