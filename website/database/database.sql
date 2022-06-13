@@ -65,6 +65,7 @@ CREATE TABLE Category
 (
     id INTEGER NOT NULL,
     name NVARCHAR(50)  NOT NULL,
+    thumbnail NVARCHAR(250) NOT NULL,
     CONSTRAINT PK_Category PRIMARY KEY  (id)
 );
 
@@ -79,9 +80,9 @@ CREATE INDEX IFK_Category ON Category (id);
    Populate Tables
 ********************************************************************************/
 
-INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate, gender) VALUES ('Pedro', 'Veloso', '917879879', '1@gmail.com', 'admin', '2004-10-20', 'Male');
-INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate, gender) VALUES ('Jorge', 'Jesus', '968767564', '2@gmail.com', 'admin', '2003-1-13', 'Idk');
-INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate, gender) VALUES ('Bruna', 'Carvalho', '938762512', '3@gmail.com', 'admin', '2001-5-4', 'Female');
+INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate, gender) VALUES ('Pedro', 'Veloso', '917879879', '1@gmail.com', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', '2004-10-20', 'Male');
+INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate, gender) VALUES ('Jorge', 'Jesus', '968767564', '2@gmail.com', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', '2003-1-13', 'Idk');
+INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate, gender) VALUES ('Bruna', 'Carvalho', '938762512', '3@gmail.com', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', '2001-5-4', 'Female');
 
 INSERT INTO Restaurant (name, address, ownerId) VALUES ('Ola', 'Praça da Liberdade 126, 4000-322 Porto', '1');
 INSERT INTO Restaurant (name, address, ownerId) VALUES ('Adeus', 'Estr. Exterior da Circunvalação 8114-8116, 4200-163 Porto', '2');
@@ -92,8 +93,23 @@ INSERT INTO Phone (phoneNumber, restaurantId) VALUES ('252034678', '1');
 INSERT INTO Phone (phoneNumber, restaurantId) VALUES ('967345192', '2');
 INSERT INTO Phone (phoneNumber, restaurantId) VALUES ('250873248', '3');
 
-INSERT INTO Category (name) VALUES ('Carnes');
-INSERT INTO Category (name) VALUES ('Peixe');
+INSERT INTO Category (name, thumbnail) VALUES ('Breakfast', 'Breakfast.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Burgers', 'Burgers.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Chinese', 'Chinese.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Country Food', 'CountryFood.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Fast Food', 'FastFood.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Gluten-free', 'Gluten-free.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Hot Dogs', 'HotDogs.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Ice Cream', 'IceCream.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Indian', 'Indian.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Italian', 'Italian.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Japanese', 'Japanese.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Mexican', 'Mexican.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Pizza', 'Pizza.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Seafood', 'Seafood.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Soup & Salad', 'SoupSalad.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Steaks', 'Steaks.jpg');
+INSERT INTO Category (name, thumbnail) VALUES ('Sushi', 'Sushi.jpg');
 
 INSERT INTO Dish (name, price, description, thumbnail, restaurantid, categoryid) VALUES ('Lasanha', 12.60, 'DELICIA', '/website/assets/images/dishes/thumbnails/1.jpg', '1', '1');
 INSERT INTO Dish (name, price, description, thumbnail, restaurantid, categoryid) VALUES ('Arroz de Pata', 21.50, 'kidijfunr,uiaejf,naer,frnio+mksdfmf sfkjsdn fjksdm fsjdkç', '/website/assets/images/dishes/thumbnails/2.jpg', '1', '1');

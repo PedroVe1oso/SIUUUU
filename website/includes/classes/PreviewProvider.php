@@ -26,14 +26,22 @@ class PreviewProvider
                 </div>";
     }
 
+    public function createEntityPreviewSquare($entity) {
+        $id = $entity->getId();
+        $thumbnail = $entity->getThumbnail();
+        $name = $entity->getName();
+
+        return "<a href='entity.php?id=$id'>
+                    <div class='previewContainer small'>
+                        <img src='$thumbnail' title='$name'>
+                    </div>
+                </a>";
+    }
+
     private function getRandomDish(): Entity
     {
-        $stmt = $this->con->prepare("SELECT * FROM Dish ORDER BY RANDOM() LIMIT 1");
-        $stmt->execute();
-
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        return new Entity($this->con, $row);
+        $entity = EntityProvider::getEntities($this->con, null, 1);
+        return $entity[0];
     }
 }
 ?>

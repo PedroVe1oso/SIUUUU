@@ -1,7 +1,9 @@
 <?php
 require_once(__DIR__ . '/../database/config.php');
 require_once(__DIR__ . '/classes/PreviewProvider.php');
+require_once(__DIR__ . '/classes/CategoryContainers.php');
 require_once(__DIR__ . '/classes/Entity.php');
+require_once(__DIR__ . '/classes/EntityProvider.php');
 
 if(!isset($_SESSION['userLoggedIn']))
 {
@@ -23,9 +25,8 @@ $userLoggedIn = $_SESSION["userLoggedIn"];
         <script src="https://kit.fontawesome.com/3b04e89a84.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="wrapper">
-
-            <div class="navBar">
+        <header>
+            <nav class="navBar">
                 <div class="logoContainer">
                     <a href="index.php">
                         <img src="/website/assets/images/logo.png" alt="Eat Up Logo">
@@ -47,4 +48,8 @@ $userLoggedIn = $_SESSION["userLoggedIn"];
                         <i class="fas fa-user"></i>
                     </a>
                 </ul>
-            </div>
+            </nav>
+        </header>
+
+        <main>
+
