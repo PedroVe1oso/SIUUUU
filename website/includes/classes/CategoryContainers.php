@@ -40,7 +40,19 @@ class CategoryContainers
         $categoryId = $sqlData["id"];
         $name = $name == null ? $sqlData["name"] : $name;
 
-        return $name . "<br>";
+        $entities = EntityProvider::getEntities($this->con, $categoryId, 20);
+
+        if (sizeof($entities) == 0) {
+            return;
+        }
+
+        $entitiesHtml = "";
+        $previewProvider = new PreviewProvider($this->con, $this->username);
+
+        foreach ($entities as $entity) {
+            $entitiesHtml .= $previewProvider->createEntityPreviewSquare($entity);
+        }
+        return $entitiesHtml . "<br>";
     }
 }
 ?>

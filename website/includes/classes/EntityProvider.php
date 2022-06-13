@@ -8,10 +8,10 @@ class EntityProvider
         $stmt = "SELECT * FROM Dish ";
 
         if ($categoryId != null) {
-            $stmt .= "WHERE id=:categoryId";
+            $stmt .= "WHERE id=:categoryId ";
         }
 
-        $stmt .= "ORDER BY RANDOM() LIMIT :limit";
+        $stmt .= "ORDER BY random() LIMIT :limit";
 
         $query = $con->prepare($stmt);
         if ($categoryId != null) {
