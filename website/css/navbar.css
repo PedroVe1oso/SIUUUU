@@ -30,7 +30,7 @@
     font-size: 14px;
     padding-bottom: 21px;
     margin-left: 20px;
-    text-decoration: none;
+    text-decoration: none  !important;
 }
 
 .navLinks a:hover {
