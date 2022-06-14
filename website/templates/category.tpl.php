@@ -6,14 +6,14 @@ require_once(__DIR__ . '/../database/classes/Category.php');
 ?>
 
 <?php function drawCategories(array $categories) { ?>
-    <header>
+    <div id="entityHeader">
         <h2>Categories</h2>
 <!--        <input id="searchartist" type="text" placeholder="search">-->
-    </header>
-    <section id="categories">
+    </div>
+    <section id="entity">
         <?php foreach($categories as $category) { ?>
             <article>
-                <img src="<?=$category->thumbnail?>">
+                <img src="../assets/images/categories/thumbnails/<?=$category->thumbnail?>">
                 <a href="#"><?=$category->name?></a>
             </article>
         <?php } ?>

@@ -15,11 +15,11 @@ require_once(__DIR__ . '/../templates/restaurant.tpl.php');
 
 $con = getDatabaseConnection();
 
-$categories = Category::getCategories($con, 10);
-$restaurants = Restaurant::getRestaurants($con, 10);
+$categories = Category::getCategories($con, 6);
+$restaurants = Restaurant::getRestaurants($con, 6);
 
 drawHeader($session);
 drawCategories($categories);
-drawRestaurants($categories);
+drawRestaurants($restaurants);
 drawFooter();
 ?>
