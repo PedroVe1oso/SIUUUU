@@ -17,6 +17,16 @@ header {
     margin-bottom: 70px;
 }
 
-main {
+main,
+footer {
     color: #ffffff;
+}
+
+footer {
+    width: 100%;
+    background-color: #141414;
+    text-align: center;
+    padding: 10px;
+    border-top: #808080 solid 2px;
+    border-bottom: #808080 solid 2px;
 }

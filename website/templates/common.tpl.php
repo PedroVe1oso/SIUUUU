@@ -14,6 +14,7 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" type="text/css" href="/website/css/style.css">
         <link rel="stylesheet" type="text/css" href="/website/css/navbar.css">
+        <link rel="stylesheet" type="text/css" href="/website/css/signUpIn.css">
         <script src="https://kit.fontawesome.com/3b04e89a84.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -56,25 +57,49 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
         </main>
 
         <footer>
-            EatUp &copy; 3022
+            <p>EatUp &copy; 2022-<?php $today = date("Y"); echo $today?></p>
         </footer>
     </body>
 </html>
 <?php } ?>
 
 <?php function drawLoginIcon() { ?>
-    <a href="login.php">
+    <a href="./pages/login.php">
         <i class="fas fa-sign-in"></i>
     </a>
 <?php } ?>
 
+<?php function drawLoginForm() { ?>
+    <section class="signUpAndInContainer">
+        <div class="signInContainer">
+            <div class="header">
+                <h1>Sign In</h1>
+                <h2>Welcome.</h2>
+            </div>
+            <form action="../actions/action_login.php" method="POST">
+                <div class="userDetails">
+                    <input type="text" name="email" placeholder="Email" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="logInButton">
+                    <input type="submit" name="submitButton" value="Log In">
+                </div>
+            </form>
+            <div class="divide"></div>
+            <div class="registerButton">
+                <button onclick="document.location='register.php'">Create new account</button>
+            </div>
+        </div>
+    </section>
+<?php } ?>
+
 <?php function drawLogoutForm(Session $session) { ?>
-    <form action="/website/actions/action_logout.php" method="post" class="logout">
+    <form action="../actions/action_logout.php" method="post" class="logoutContainer">
         <a href="profile.php">
             <i class="fas fa-user"></i>
         </a>
-        <button type="submit">Logout
-<!--            <i class="fas fa-sign-out"></i>-->
+        <button type="submit">
+            <i class="fas fa-sign-out"></i>
         </button>
     </form>
 <?php } ?>
