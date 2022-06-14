@@ -17,6 +17,36 @@ header {
     margin-bottom: 70px;
 }
 
-main {
+main,
+footer {
     color: #ffffff;
+}
+
+footer {
+    width: 100%;
+    background-color: #141414;
+    text-align: center;
+    padding: 10px;
+    border-top: #808080 solid 2px;
+    border-bottom: #808080 solid 2px;
+}
+
+.modalContainer {
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    transition: opacity 0.3s ease;
+}
+
+.modalContainer.show {
+    opacity: 1;
+    pointer-events: auto;
 }
