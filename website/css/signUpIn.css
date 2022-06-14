@@ -154,13 +154,13 @@ form .logInButton > input {
     margin: 5px 0 10px;
 }
 
-a {
+.signUpContainer a {
     font-size: 12px;
     color: rgb(24, 119, 242);
     text-decoration: none;
 }
 
-a:hover {
+.signUpContainer a:hover {
     text-decoration: underline;
 }
 

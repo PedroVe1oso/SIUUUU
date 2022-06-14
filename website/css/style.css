@@ -50,3 +50,69 @@ footer {
     opacity: 1;
     pointer-events: auto;
 }
+
+
+.profileContainer{
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileSettings {
+    background-color: transparent;
+    height: 95%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.profileSettings::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+.profileSettings h2 {
+    color: #ffffff;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.profileSettings .form {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    border-bottom: 1px solid #dedede;
+    padding-bottom: 20px;
+}
+
+.profileSettings form {
+    border-top: 0;
+}
+
+.profileSettings form input[type = "text"],
+.profileSettings form input[type = "email"],
+.profileSettings form input[type = "password"] {
+    width: 300px;
+    height: 40px;
+    font-size: 15px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 3px;
+    padding: 0 5px;
+}
+
+.profileSettings form input[type = "submit"] {
+    width: 300px;
+    height: 40px;
+    font-size: 15px;
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    text-align: center;
+}

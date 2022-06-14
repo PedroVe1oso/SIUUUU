@@ -140,7 +140,7 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
 
 <?php function drawLogoutForm(Session $session) { ?>
     <form action="../actions/action_logout.php" method="post" class="logoutContainer">
-        <a href="profile.php">
+        <a href="../pages/profile.php">
             <i class="fas fa-user"></i>
         </a>
         <button type="submit">

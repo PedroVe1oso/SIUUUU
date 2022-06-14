@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6fca43f-6e7b-4026-acb4-4025376a776e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/signUpIn.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/signUpIn.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/classes/Account.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/classes/Category.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/common.tpl.php" beforeDir="false" afterPath="$PROJECT_DIR$/templates/common.tpl.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +48,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655230933210</updated>
-      <workItem from="1655230935047" duration="919000" />
+      <workItem from="1655230935047" duration="10824000" />
     </task>
     <servers />
   </component>
