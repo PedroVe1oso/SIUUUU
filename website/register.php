@@ -55,7 +55,7 @@
                         <input type="submit" name="submitButton" value="Register">
                     </div>
                 </form>
-                <a href="login.php" class="linkToLogIn">Already have an account? Log in here.</a>
+                <a href="/pages/login.php" class="linkToLogIn">Already have an account? Log in here.</a>
             </section>
         </div>
     </body>

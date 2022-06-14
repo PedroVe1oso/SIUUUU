@@ -64,7 +64,7 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
 <?php } ?>
 
 <?php function drawLoginIcon() { ?>
-    <a href="./pages/login.php">
+    <a href="../pages/login.php">
         <i class="fas fa-sign-in"></i>
     </a>
 <?php } ?>
