@@ -38,14 +38,16 @@ class User
 
     static function getUserWithPassword(PDO $con, string $email, string $password) : ?User {
         $stmt = $con->prepare('
-        SELECT id, firstName, lastName, phoneNumber, email, birthDate, gender
+        SELECT id, firstName, lastName, phoneNumber, email, password, birthDate, gender
         FROM Users 
-        WHERE lower(email) = ? AND password = ?
+        WHERE lower(email) = ?
       ');
 
-        $stmt->execute(array(strtolower($email), hash("sha512", $password)));
+        $stmt->execute(array(strtolower($email)));
+        $user = $stmt->fetch();
 
-        if ($user = $stmt->fetch()) {
+        if ($user && password_verify($password, $user['password'])) {
+
             return new User(
                 $user['id'],
                 $user['firstName'],
@@ -78,6 +80,5 @@ class User
             $user['gender']
         );
     }
-
 }
 ?>

@@ -43,10 +43,6 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
                     if ($session->isLoggedIn()) drawLogoutForm($session);
                     else drawLoginIcon($session);
                     ?>
-
-<!--                    <a href="login.php">-->
-<!--                        <i class="fas fa-sign-in"></i>-->
-<!--                    </a>-->
                 </ul>
             </nav>
         </header>
@@ -97,7 +93,7 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
                         <h1>Sign Up</h1>
                         <h2>It’s quick and easy.</h2>
                     </div>
-                    <form method="POST">
+                    <form action="../actions/action_register.php" method="POST">
                         <div class="userDetails">
                             <div class="form-input-group">
                                 <input type="text" name="firstName" placeholder="First name" required>
@@ -108,11 +104,11 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
                                 <input type="tel" name="phoneNumber" placeholder="Phone number" pattern="[0-9]{9}" required>
                             </div>
                             <div class="form-input-group">
-                                <input type="password" name="password" placeholder="Password" required>
+                                <input type="password" name="password1" placeholder="Password" required>
                                 <input type="password" name="password2" placeholder="Confirm password" required>
                             </div>
                             <div class="form-input-group">
-                                <label for="birthday">Birthday: <input type="date" id="birthday" name="birthday"></label>
+                                <label for="birthday">Birthday: <input type="date" id="birthday" name="birthDate"></label>
                             </div>
                             <div class="form-input-group">
                                 <div>Gender:</div>
