@@ -1,12 +1,15 @@
 <?php
-require_once(__DIR__ . '/includes/header.php');
+declare(strict_types = 1);
 
+require_once(__DIR__ . '/includes/classes/Session.php');
+$session = new Session();
 
-$preview = new PreviewProvider($con, $userLoggedIn);
+require_once(__DIR__ . '/database/config.php');
+require_once(__DIR__ . '/templates/common.tpl.php');
 
-echo $preview->createPreview(null);
+$con = getDatabaseConnection();
 
-$categoryContainers = new CategoryContainers($con, $userLoggedIn);
+drawHeader($session);
 
-echo $categoryContainers->showAllCategories(null);
+drawFooter();
 ?>
