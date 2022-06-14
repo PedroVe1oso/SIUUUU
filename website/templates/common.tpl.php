@@ -37,9 +37,14 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
                     <a href="search.php">
                         <i class="fas fa-search"></i>
                     </a>
-                    <a href="login.php">
-                        <i class="fas fa-user"></i>
-                    </a>
+                    <?php
+                    if ($session->isLoggedIn()) drawLogoutForm($session);
+                    else drawLoginIcon($session);
+                    ?>
+
+<!--                    <a href="login.php">-->
+<!--                        <i class="fas fa-sign-in"></i>-->
+<!--                    </a>-->
                 </ul>
             </nav>
         </header>
@@ -55,5 +60,22 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
         </footer>
     </body>
 </html>
+<?php } ?>
+
+<?php function drawLoginIcon() { ?>
+    <a href="login.php">
+        <i class="fas fa-sign-in"></i>
+    </a>
+<?php } ?>
+
+<?php function drawLogoutForm(Session $session) { ?>
+    <form action="/website/actions/action_logout.php" method="post" class="logout">
+        <a href="profile.php">
+            <i class="fas fa-user"></i>
+        </a>
+        <button type="submit">Logout
+<!--            <i class="fas fa-sign-out"></i>-->
+        </button>
+    </form>
 <?php } ?>
 
