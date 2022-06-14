@@ -8,10 +8,10 @@ class User
     public string $lastName;
     public string $phoneNumber;
     public string $email;
-    public int $birthDate;
+    public string $birthDate;
     public string $gender;
 
-    public function __construct(int $id, string $firstName, string $lastName, string $phoneNumber, string $email, int $birthDate, string $gender)
+    public function __construct(int $id, string $firstName, string $lastName, string $phoneNumber, string $email, string $birthDate, string $gender)
     {
         $this->id = $id;
         $this->firstName = $firstName;
@@ -29,7 +29,7 @@ class User
 
     function save($con) {
         $stmt = $con->prepare('
-        UPDATE Users SET FirstName = ?, LastName = ?
+        UPDATE Users SET firstName = ?, lastName = ?
         WHERE id = ?
       ');
 
@@ -38,7 +38,7 @@ class User
 
     static function getUserWithPassword(PDO $con, string $email, string $password) : ?User {
         $stmt = $con->prepare('
-        SELECT id, FirstName, LastName, phoneNumber, email, birthDate, gender
+        SELECT id, firstName, lastName, phoneNumber, email, birthDate, gender
         FROM Users 
         WHERE lower(email) = ? AND password = ?
       ');
@@ -60,7 +60,7 @@ class User
 
     static function getUser(PDO $con, int $id) : User {
         $stmt = $con->prepare('
-        SELECT id, FirstName, LastName, phoneNumber, email, birthDate, gender
+        SELECT id, firstName, lastName, phoneNumber, email, birthDate, gender
         FROM Users 
         WHERE id = ?
       ');

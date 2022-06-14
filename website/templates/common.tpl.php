@@ -37,7 +37,7 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
                     <a href="search.php">
                         <i class="fas fa-search"></i>
                     </a>
-                    <a href="profile.php">
+                    <a href="login.php">
                         <i class="fas fa-user"></i>
                     </a>
                 </ul>
