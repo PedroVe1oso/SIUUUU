@@ -63,6 +63,7 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
 <?php function drawLoginIcon() { ?>
     <a href="../pages/login.php">
         <i class="fas fa-sign-in"></i>
+        Login
     </a>
 <?php } ?>
 
@@ -139,12 +140,14 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
 <?php } ?>
 
 <?php function drawLogoutForm(Session $session) { ?>
+    <a href="../pages/profile.php">
+        <i class="fas fa-user"></i>
+        <?=$session->getName()?>
+    </a>
     <form action="../actions/action_logout.php" method="post" class="logoutContainer">
-        <a href="../pages/profile.php">
-            <i class="fas fa-user"></i>
-        </a>
         <button type="submit">
             <i class="fas fa-sign-out"></i>
+            Logout
         </button>
     </form>
 <?php } ?>

@@ -40,13 +40,36 @@
 }
 
 .rightItems {
-    text-align: right;
     flex: 1;
+    display: flex;
+    font-size: 20px;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 .rightItems i {
     color: #ffffff;
-    font-size: 20px;
+    margin-left: 10px;
+}
+
+.rightItems a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.rightItems form{
+    font-size: inherit;
+    width: auto;
+    padding: 0;
+    border: 0;
+}
+
+.rightItems form button {
+    background-color: transparent;
+    color: #ffffff;
+    font-size: inherit;
+    border: 0;
     margin-left: 10px;
 }
 

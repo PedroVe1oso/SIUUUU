@@ -16,7 +16,7 @@ $user = User::getUser($con, $session->getId());
 
 if ($user) {
     $user->firstName = $_POST['firstName'];
-    $user->lastName = $_POST['lastLame'];
+    $user->lastName = $_POST['lastName'];
 
 
     $user->save($con);
