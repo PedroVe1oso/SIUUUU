@@ -7,14 +7,19 @@ require_once(__DIR__ . '/../database/classes/Restaurant.php');
 ?>
 
 <?php function drawRestaurants(array $restaurants) { ?>
-    <div id="entityHeader">
-        <h2>Restaurants</h2>
-    </div>
-    <section id="entity">
-        <?php foreach($restaurants as $restaurant) { ?>
-            <article>
-                <a href="#"><?=$restaurant->name?></a>
-            </article>
-        <?php } ?>
+    <section class="previewContainer">
+        <a href="#">
+            <h2>Restaurants</h2>
+        </a>
+        <section class="list">
+            <?php foreach($restaurants as $restaurant) { ?>
+            <a href="#">
+                <article class="entity">
+                    <img src="../assets/images/categories/thumbnails/<?=$restaurant->thumbnail?>">
+                    <p><?=$restaurant->name?></p>
+                </article>
+            </a>
+            <?php } ?>
+        </section>
     </section>
 <?php } ?>

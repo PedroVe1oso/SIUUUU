@@ -15,7 +15,7 @@ require_once(__DIR__ . '/../templates/restaurant.tpl.php');
 
 $con = getDatabaseConnection();
 
-$categories = Category::getCategories($con, 6);
+$categories = Category::getCategories($con, 15);
 $restaurants = Restaurant::getRestaurants($con, 6);
 
 drawHeader($session);
