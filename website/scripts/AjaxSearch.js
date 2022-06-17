@@ -9,8 +9,9 @@ if (searchRestaurant) {
 
         for (const restaurant of restaurants) {
             const link = document.createElement('a')
-            link.href = '#'
+            link.href = '../pages/restaurant.php?id=' + restaurant.id
             const article = document.createElement('article')
+            article.className = 'entity'
             const img = document.createElement('img')
             img.src = '../assets/images/thumbnails/restaurants/' + restaurant.thumbnail
             const p = document.createElement('p')

@@ -50,7 +50,7 @@ CREATE TABLE Dish
 (
     id INTEGER NOT NULL,
     name NVARCHAR(50)  NOT NULL,
-    price NUMERIC(6,2) NOT NULL,
+    price REAL NOT NULL,
     description NVARCHAR(200) NOT NULL,
     thumbnail NVARCHAR(250) NOT NULL,
     restaurantId INTEGER NOT NULL,
