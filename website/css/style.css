@@ -74,12 +74,13 @@ a {
     color: #ffffff;
 }
 
-.previewContainer .list {
+.list {
     position: relative;
     display: flex;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 

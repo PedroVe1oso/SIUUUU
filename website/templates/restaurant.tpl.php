@@ -41,3 +41,18 @@ require_once(__DIR__ . '/../database/classes/Restaurant.php');
         </section>
     </section>
 <?php } ?>
+
+<?php function drawMyRestaurants(array $restaurants) { ?>
+    <section class="previewContainer">
+        <section id="restaurants" class="list">
+            <?php foreach($restaurants as $restaurant) { ?>
+                <a href="../pages/restaurant.php?id=<?=$restaurant->id?>">
+                    <article class="entity">
+                        <img src="../assets/images/thumbnails/restaurants/<?=$restaurant->thumbnail?>">
+                        <p><?=$restaurant->name?></p>
+                    </article>
+                </a>
+            <?php } ?>
+        </section>
+    </section>
+<?php } ?>

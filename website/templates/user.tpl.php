@@ -1,8 +1,10 @@
 <?php
 declare(strict_types = 1);
+
+require_once(__DIR__ . '/../database/classes/Restaurant.php');
 ?>
 
-<?php function drawProfileForm(User $user) { ?>
+<?php function drawProfileForm(PDO $con, User $user) { ?>
         <div class="profileContainer">
             <aside class="profileSideBar">
                 <h1>PROFILE</h1>
@@ -13,7 +15,12 @@ declare(strict_types = 1);
                         <button onclick="showPanel(2,'#808080')">Favorite Dishes</button>
                         <button onclick="showPanel(3,'#808080')">Settings</button>
                     </div>
-                    <div class="profileTab"></div>
+                    <div class="profileTab">
+                        <?php
+                            $myRestaurants = Restaurant::getMyRestaurants($con, $user->id);
+                            drawMyRestaurants($myRestaurants);
+                        ?>
+                    </div>
                     <div class="profileTab"></div>
                     <div class="profileTab"></div>
                     <div class="profileTab">

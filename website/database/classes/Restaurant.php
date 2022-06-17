@@ -72,4 +72,22 @@ class Restaurant
 
         $stmt->execute(array($this->name, $this->id));
     }
+
+    static function getMyRestaurants(PDO $con, int $id): array
+    {
+        $stmt = $con->prepare('SELECT id, name, thumbnail, address FROM Restaurant WHERE ownerId = ? ORDER BY signUpDate');
+        $stmt->execute(array($id));
+
+        $restaurants = array();
+        while ($restaurant = $stmt->fetch()) {
+            $restaurants[] = new Restaurant(
+                $restaurant['id'],
+                $restaurant['name'],
+                $restaurant['thumbnail'],
+                $restaurant['address']
+            );
+        }
+
+        return $restaurants;
+    }
 }

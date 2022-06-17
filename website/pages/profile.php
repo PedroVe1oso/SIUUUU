@@ -11,12 +11,13 @@ require_once(__DIR__ . '/../database/classes/User.php');
 
 require_once(__DIR__ . '/../templates/common.tpl.php');
 require_once(__DIR__ . '/../templates/user.tpl.php');
+require_once(__DIR__ . '/../templates/restaurant.tpl.php');
 
-$db = getDatabaseConnection();
+$con = getDatabaseConnection();
 
-$user = User::getUser($db, $session->getId());
+$user = User::getUser($con, $session->getId());
 
 drawHeader($session);
-drawProfileForm($user);
+drawProfileForm($con, $user);
 drawFooter();
 ?>
