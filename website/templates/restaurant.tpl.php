@@ -2,8 +2,6 @@
 declare(strict_types = 1);
 
 require_once(__DIR__ . '/../database/classes/Restaurant.php');
-//require_once(__DIR__ . '/../database/classes/Category.php');
-//require_once(__DIR__ . '/../includes/classes/Session.php');
 ?>
 
 <?php function drawRestaurants(array $restaurants) { ?>
@@ -11,11 +9,12 @@ require_once(__DIR__ . '/../database/classes/Restaurant.php');
         <a href="#">
             <h2>Restaurants</h2>
         </a>
-        <section class="list">
+        <input id="searchrestaurant" type="text" placeholder="Search restaurant">
+        <section id="restaurants" class="list">
             <?php foreach($restaurants as $restaurant) { ?>
             <a href="#">
                 <article class="entity">
-                    <img src="../assets/images/categories/thumbnails/<?=$restaurant->thumbnail?>">
+                    <img src="../assets/images/thumbnails/restaurants/<?=$restaurant->thumbnail?>">
                     <p><?=$restaurant->name?></p>
                 </article>
             </a>

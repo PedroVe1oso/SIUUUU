@@ -4,7 +4,19 @@ declare(strict_types = 1);
 
 <?php function drawProfileForm(User $user) { ?>
         <div class="profileContainer">
-            <div class="profileSettings">
+            <aside class="profileSideBar">
+                <h1>PROFILE</h1>
+                <section class="profileLinks">
+                    <ul>
+                        <li><a href="#myRestaurants">My Restaurants</a></li>
+                        <li><a href="#favoriteRestaurants">Favorite Restaurants</a></li>
+                        <li><a href="#favoriteDishes">Favorite Dishes</a></li>
+                        <li><a href="#settings">Settings</a></li>
+                    </ul>
+                </section>
+            </aside>
+            </ivd>
+            <div id="settings" class="profileSettings">
                 <section class="form">
                     <form action="../actions/action_edit_profile.php" method="POST">
                         <h2>User details</h2>

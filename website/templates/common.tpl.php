@@ -12,10 +12,12 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" type="text/css" href="/website/css/style.css">
-        <link rel="stylesheet" type="text/css" href="/website/css/navbar.css">
-        <link rel="stylesheet" type="text/css" href="/website/css/signUpIn.css">
-        <script src="../scripts/script.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        <link rel="stylesheet" type="text/css" href="../css/navbar.css">
+        <link rel="stylesheet" type="text/css" href="../css/signUpIn.css">
+        <link rel="stylesheet" type="text/css" href="../css/profile.css">
+        <script src="../scripts/RegistrationModal.js" defer></script>
+        <script src="../scripts/AjaxSearch.js" defer></script>
         <script src="https://kit.fontawesome.com/3b04e89a84.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -41,7 +43,7 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
                     </a>
                     <?php
                     if ($session->isLoggedIn()) drawLogoutForm($session);
-                    else drawLoginIcon($session);
+                    else drawLoginIcon();
                     ?>
                 </ul>
             </nav>
@@ -85,7 +87,6 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
             </form>
             <div class="divide"></div>
             <div class="registerButton">
-<!--                <button onclick="document.location='/website/pages/register.php'">Create new account</button>-->
                 <button id="openRegisterModal">Create new account</button>
             </div>
             <div class="modalContainer" id="modalContainer">

@@ -19,7 +19,7 @@ class Category
 
     static function getCategories(PDO $con, int $count): array
     {
-        $stmt = $con->prepare('SELECT id, name, thumbnail FROM Category LIMIT ?');
+        $stmt = $con->prepare('SELECT id, name, thumbnail FROM Category ORDER BY RANDOM() LIMIT ?');
         $stmt->execute(array($count));
 
         $categories = array();

@@ -5,5 +5,5 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
 $session = new Session();
 $session->logout();
 
-header('Location: ../index.php');
+header('Location: ../pages/index.php');
 ?>

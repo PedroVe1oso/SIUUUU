@@ -10,12 +10,11 @@ require_once(__DIR__ . '/../database/classes/Category.php');
         <a href="#">
             <h2>Categories</h2>
         </a>
-            <!--        <input id="searchartist" type="text" placeholder="search">-->
         <section class="list">
             <?php foreach($categories as $category) { ?>
                  <a href="#">
                      <article class="entity">
-                         <img src="../assets/images/categories/thumbnails/<?=$category->thumbnail?>">
+                         <img src="../assets/images/thumbnails/categories/<?=$category->thumbnail?>">
                          <p><?=$category->name?></p>
                      </article>
                  </a>

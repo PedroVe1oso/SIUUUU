@@ -15,9 +15,9 @@ if ($User) {
     $session->setId($User->id);
     $session->setName($User->name());
     $session->addMessage('success', 'Login successful!');
-    header('Location: /website/pages/index.php');
+    header('Location: ../pages/index.php');
 } else {
     $session->addMessage('error', 'Wrong password!');
-    header('Location: /website/pages/login.php');
+    header('Location: ../pages/login.php');
 }
 ?>

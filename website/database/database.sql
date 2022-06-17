@@ -29,6 +29,7 @@ CREATE TABLE Restaurant
     id INTEGER NOT NULL,
     name NVARCHAR(50)  NOT NULL,
     address NVARCHAR(250) NOT NULL,
+    thumbnail NVARCHAR(250) NOT NULL,
     ownerId INTEGER NOT NULL,
     signUpDate INTEGER DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT PK_Restaurant PRIMARY KEY  (id),
@@ -80,18 +81,19 @@ CREATE INDEX IFK_Category ON Category (id);
    Populate Tables
 ********************************************************************************/
 
-INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate, gender) VALUES ('Pedro', 'Veloso', '917879879', '1@gmail.com', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', '2004-10-20', 'Male');
-INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate, gender) VALUES ('Jorge', 'Jesus', '968767564', '2@gmail.com', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', '2003-1-13', 'Idk');
-INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate, gender) VALUES ('Bruna', 'Carvalho', '938762512', '3@gmail.com', 'c7ad44cbad762a5da0a452f9e854fdc1e0e7a52a38015f23f3eab1d80b931dd472634dfac71cd34ebc35d16ab7fb8a90c81f975113d6c7538dc69dd8de9077ec', '2001-5-4', 'Female');
+INSERT INTO Users (firstName, lastName, phoneNumber, email, password, birthDate, gender) VALUES ('Pedro', 'Veloso', '917879879', '1@gmail.com', '$2y$10$fzTTt1GsFpHCRx0htjil5ejz6Fmcw9TpUV3LKwyOfiUQ6wIGnxEpu', '2004-10-20', 'Male');
 
-INSERT INTO Restaurant (name, address, ownerId) VALUES ('Ola', 'Praça da Liberdade 126, 4000-322 Porto', '1');
-INSERT INTO Restaurant (name, address, ownerId) VALUES ('Adeus', 'Estr. Exterior da Circunvalação 8114-8116, 4200-163 Porto', '2');
-INSERT INTO Restaurant (name, address, ownerId) VALUES ('Té Logo', 'Av. de Fernão de Magalhães 1647/59, 4350-170 Porto', '3');
+INSERT INTO Restaurant (name, address, thumbnail, ownerId) VALUES ('Ferrugem', 'Rua das Pedrinhas 32 Portela VNF, Vila Nova de Famalicão 4770-379 Portugal', 'ferrugem.jpg','1');
+INSERT INTO Restaurant (name, address, thumbnail, ownerId) VALUES ('Mikado', 'Avenida dos Descobrimentos, 840, Vila Nova de Famalicão 4760-011 Portugal', 'mikado.jpg','1');
+INSERT INTO Restaurant (name, address, thumbnail, ownerId) VALUES ('Pensão Santo António', 'Praça D. Maria II, 1714, Vila Nova de Famalicão 4760-111 Portugal', 'pensaosantonio.jpg','1');
+INSERT INTO Restaurant (name, address, thumbnail, ownerId) VALUES ('ME.AT Famalicão', 'Avenida 25 de abril, 22, Vila Nova de Famalicão 4760-101 Portugal', 'meatfamalicao.jpg','1');
+INSERT INTO Restaurant (name, address, thumbnail, ownerId) VALUES ('Lounge', 'R. Mário Cesariny 444 Loja 1, Vila Nova de Famalicão 4760-010 Portugal', 'lounge.jpg','1');
 
-INSERT INTO Phone (phoneNumber, restaurantId) VALUES ('918789987', '1');
-INSERT INTO Phone (phoneNumber, restaurantId) VALUES ('252034678', '1');
-INSERT INTO Phone (phoneNumber, restaurantId) VALUES ('967345192', '2');
-INSERT INTO Phone (phoneNumber, restaurantId) VALUES ('250873248', '3');
+INSERT INTO Phone (phoneNumber, restaurantId) VALUES ('+351 252 911 700', '1');
+INSERT INTO Phone (phoneNumber, restaurantId) VALUES ('+351 912 503 308', '2');
+INSERT INTO Phone (phoneNumber, restaurantId) VALUES ('+351 252 322 704', '3');
+INSERT INTO Phone (phoneNumber, restaurantId) VALUES ('+351 935 441 144', '4');
+INSERT INTO Phone (phoneNumber, restaurantId) VALUES ('+351 935 517 018', '5');
 
 INSERT INTO Category (name, thumbnail) VALUES ('Breakfast', 'Breakfast.jpg');
 INSERT INTO Category (name, thumbnail) VALUES ('Burgers', 'Burgers.jpg');

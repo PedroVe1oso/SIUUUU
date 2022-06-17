@@ -1,3 +1,5 @@
+//Registration modal
+
 const openRegisterModal = document.getElementById('openRegisterModal');
 const modalContainer = document.getElementById('modalContainer');
 const closeRegisterModal1 = document.getElementById('closeRegisterModal1');
