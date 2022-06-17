@@ -12,6 +12,11 @@ require_once(__DIR__ . '/../database/classes/user.php');
 
 $con = getDatabaseConnection();
 
+/*
+if ($_SESSION['csrf'] !== $_POST['csrf']) {
+  $session->addMessage('IllegitimateRequest', 'Request does not appear to be legitimate!');
+} else {
+*/
 $user = User::getUser($con, $session->getId());
 
 if ($user) {
@@ -23,5 +28,7 @@ if ($user) {
 
     $session->setName($user->name());
 }
-
+/*
+}
+*/
 header('Location: ../pages/profile.php');
