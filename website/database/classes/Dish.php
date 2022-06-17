@@ -4,19 +4,19 @@ declare(strict_types = 1);
 class Dish {
     public int $id;
     public string $name;
-    public int $price;
+    public float $price;
     public string $description;
 
-    public function __construct(int $id, string $name, int $price, string $description) {
+    public function __construct(int $id, string $name, float $price, string $description) {
         $this->id = $id;
         $this->name = $name;
         $this->price = $price;
         $this->description = $description;
     }
 
-    static function getRestaurantDishes(PDO $con, string $idType, int $id) : array {
-        $stmt = $con->prepare('SELECT id, name, price, description FROM Dish WHERE ? = ?');
-        $stmt->execute(array($idType, $id));
+    static function getRestaurantDishes(PDO $con, int $id) : array {
+        $stmt = $con->prepare('SELECT id, name, price, description FROM Dish WHERE id = ?');
+        $stmt->execute(array($id));
 
         $dishes = array();
 
