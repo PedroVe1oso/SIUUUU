@@ -29,7 +29,7 @@ CREATE TABLE Restaurant
     id INTEGER NOT NULL,
     name NVARCHAR(50)  NOT NULL,
     address NVARCHAR(250) NOT NULL,
-    thumbnail NVARCHAR(250) NOT NULL,
+    thumbnail NVARCHAR(250),
     ownerId INTEGER NOT NULL,
     signUpDate INTEGER DEFAULT CURRENT_TIMESTAMP,
     CONSTRAINT PK_Restaurant PRIMARY KEY  (id),
@@ -52,7 +52,7 @@ CREATE TABLE Dish
     name NVARCHAR(50)  NOT NULL,
     price REAL NOT NULL,
     description NVARCHAR(200) NOT NULL,
-    thumbnail NVARCHAR(250) NOT NULL,
+    thumbnail NVARCHAR(250),
     restaurantId INTEGER NOT NULL,
     categoryId INTEGER NOT NULL,
     CONSTRAINT PK_Dish PRIMARY KEY  (id),
@@ -66,7 +66,7 @@ CREATE TABLE Category
 (
     id INTEGER NOT NULL,
     name NVARCHAR(50)  NOT NULL,
-    thumbnail NVARCHAR(250) NOT NULL,
+    thumbnail NVARCHAR(250),
     CONSTRAINT PK_Category PRIMARY KEY  (id)
 );
 

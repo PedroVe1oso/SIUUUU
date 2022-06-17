@@ -5,10 +5,10 @@ class Restaurant
 {
     public int $id;
     public string $name;
-    public string $thumbnail;
+    public ?string $thumbnail;
     public string $address;
 
-    public function __construct(int $id, string $name, string $thumbnail, string $address)
+    public function __construct(int $id, string $name, ?string $thumbnail, string $address)
     {
         $this->id = $id;
         $this->name = $name;
