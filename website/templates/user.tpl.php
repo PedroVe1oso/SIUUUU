@@ -38,6 +38,7 @@ require_once(__DIR__ . '/../database/classes/Restaurant.php');
                                     <div class="registerButton">
                                         <input id="closeRegisterModal1" type="submit" name="submitButton" value="Add Restaurant">
                                     </div>
+                                    <a id="closeRegisterModal2" class="linkToLogIn">Cancel</a>
                                 </form>
                             </div>
                         </div>

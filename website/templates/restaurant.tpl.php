@@ -6,10 +6,14 @@ require_once(__DIR__ . '/../database/classes/Restaurant.php');
 
 <?php function drawRestaurants(array $restaurants) { ?>
     <section class="previewContainer">
-        <a href="#">
-            <h2>Restaurants</h2>
-        </a>
-        <input id="searchrestaurant" type="text" placeholder="Search restaurant">
+        <div class="previewHeader">
+            <a href="#">
+                <h2>Restaurants</h2>
+            </a>
+            <div class="search">
+                <input id="searchrestaurant" type="text" placeholder="Search restaurant">
+            </div>
+        </div>
         <section id="restaurants" class="list">
             <?php foreach($restaurants as $restaurant) { ?>
             <a href="../pages/restaurant.php?id=<?=$restaurant->id?>">

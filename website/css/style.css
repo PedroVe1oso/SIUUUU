@@ -61,6 +61,24 @@ a {
     padding: 2em;
 }
 
+.previewContainer .previewHeader {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.previewContainer .previewHeader .search {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.previewContainer .previewHeader .search input{
+    height: 22px;
+    font-size: 15px;
+}
+
 .previewContainer a {
     text-decoration: none;
 }
