@@ -17,6 +17,7 @@ require_once(__DIR__ . '/../includes/classes/Session.php');
         <link rel="stylesheet" type="text/css" href="../css/signUpIn.css">
         <link rel="stylesheet" type="text/css" href="../css/profile.css">
         <script src="../scripts/RegistrationModal.js" defer></script>
+        <script src="../scripts/ProfileTabs.js" defer></script>
         <script src="../scripts/AjaxSearch.js" defer></script>
         <script src="https://kit.fontawesome.com/3b04e89a84.js" crossorigin="anonymous"></script>
     </head>

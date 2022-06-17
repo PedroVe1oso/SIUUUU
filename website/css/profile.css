@@ -1,17 +1,17 @@
 .profileContainer{
     height: 100vh;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
 .profileSideBar {
     flex: 1;
-    height: 100vh;
+    width: 80%;
     display: flex;
     flex-direction: column;
-    padding: 1em 1.5em;
+    padding: 1em 0;
 }
 
 .profileSideBar h1  {
@@ -20,14 +20,36 @@
     border-bottom: 1px solid #dedede;
 }
 
-.profileLinks ul {
-    list-style: none;
+.profileTabsContainer {
+    width: 100%;
+    height: 80%;
 }
 
-.profileLinks ul li a {
-    font-size: 25px;
-    padding-bottom: 2px;
-    margin-bottom: 1em;
+.profileTabsContainer .buttonContainer {
+    height: 15%;
+}
+
+.profileTabsContainer .buttonContainer button {
+    width: 25%;
+    height: 100%;
+    float: left;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 15px;
+    background-color: #e5e5e5;
+}
+
+.profileTabsContainer .buttonContainer button:hover {
+    background-color: #808080;
+}
+
+.profileTabsContainer .profileTab {
+    height: 85%;
+    background-color: #808080;
+    color: #ffffff;
+    font-size: 22px;
+    display: none;
 }
 
 .profileSettings {
@@ -49,6 +71,7 @@
 }
 
 .profileSettings h2 {
+    float: left;
     color: #ffffff;
     font-size: 25px;
     margin-bottom: 10px;
